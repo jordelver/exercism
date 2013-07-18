@@ -1,10 +1,7 @@
 class Bob
 
   def hey(challenge)
-    response = responses[challenge.to_s]
-    return response unless response.nil?
-
-    "Whatever."
+    responses.fetch(challenge.to_s) { "Whatever." }
   end
 
   private

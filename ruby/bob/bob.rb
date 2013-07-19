@@ -1,20 +1,38 @@
 class Bob
 
-  def hey(challenge)
-    responses.fetch(challenge.to_s) { "Whatever." }
+  def hey(words)
+    speech = Speech.new(words)
+
+    case
+    when speech.shouting?
+      "Woah, chill out!"
+    when speech.question?
+      "Sure."
+    when speech.silence?
+      "Fine. Be that way."
+    else
+      "Whatever."
+    end
   end
 
-  private
+  class Speech
+    attr_reader :words
 
-  def responses
-    {
-      "WATCH OUT!" => "Woah, chill out!",
-      "Does this cryogenic chamber make me look fat?" => "Sure.",
-      "1, 2, 3 GO!" => "Woah, chill out!",
-      'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!' => "Woah, chill out!",
-      "I HATE YOU" => "Woah, chill out!",
-      "" => "Fine. Be that way."
-    }
+    def initialize(words)
+      @words = words
+    end
+
+    def shouting?
+      words =~ /[A-Z]{2,}/
+    end
+
+    def question?
+      words =~ /\?\z/
+    end
+
+    def silence?
+      words.to_s.empty?
+    end
   end
 end
 

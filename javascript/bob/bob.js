@@ -1,3 +1,23 @@
+Speech = function(words) {
+  this.words = words;
+};
+
+Speech.prototype.shouting = function() {
+  var regex = /[A-Z]{2,}/;
+
+  return regex.test(this.words);
+};
+
+Speech.prototype.question = function() {
+  var regex = /\?$/
+
+  return regex.test(this.words);
+};
+
+Speech.prototype.silence = function() {
+  return this.words === '';
+};
+
 Bob = function() {};
 
 Bob.prototype.hey = function(speech) {
@@ -5,21 +25,16 @@ Bob.prototype.hey = function(speech) {
 };
 
 Bob.prototype.respond = function(speech) {
-  switch(speech) {
-    case "Tom-ay-to, tom-aaaah-to.":
-      return "Whatever";
-    case "WATCH OUT!":
-      return "Woah, chill out!";
-    case "Does this cryogenic chamber make me look fat?":
-      return "Sure";
-    case "Let's go make out behind the gym!":
-      return "Whatever";
-    case "1, 2, 3 GO!":
-      return "Woah, chill out!";
-    case "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!":
-      return "Woah, chill out!";
-    case "":
-      return "Fine, be that way.";
+  var speech = new Speech(speech);
+
+  if(speech.shouting()) {
+    return "Woah, chill out!"
+  } else if(speech.question()) {
+    return "Sure"
+  } else if(speech.silence()) {
+    return "Fine, be that way."
+  } else {
+    return "Whatever";
   }
 };
 

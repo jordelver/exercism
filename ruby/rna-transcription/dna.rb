@@ -1,4 +1,6 @@
 class DNA
+  attr_reader :dna_strand
+
   def initialize(dna_strand)
     @dna_strand = dna_strand
   end
@@ -8,20 +10,17 @@ class DNA
   end
 
   def convert_thymidines_to_uracils
-    thymidines.map { |nucleotide| thymidine_to_uracil(nucleotide) }.join
-  end
-
-  def thymidines
-    @dna_strand.chars
-  end
-
-  def thymidine_to_uracil(nucleotide)
-    case nucleotide
-    when "T"
-      "U"
-    else
-      nucleotide
+    thymidines_to_uracils.each do |thymidine, uracil|
+      dna_strand.gsub!(thymidine, uracil)
     end
+
+    dna_strand
+  end
+
+  def thymidines_to_uracils
+    {
+      "T" => "U"
+    }
   end
 end
 

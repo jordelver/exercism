@@ -9,7 +9,7 @@ Speech.prototype.shouting = function() {
 };
 
 Speech.prototype.question = function() {
-  var regex = /\?$/
+  var regex = /\?$/;
 
   return regex.test(this.words);
 };

@@ -3,9 +3,11 @@ Speech = function(words) {
 };
 
 Speech.prototype.shouting = function() {
-  var regex = /[A-Z]{2,}/;
+  if(this.words.trim() == '') {
+    return false;
+  }
 
-  return regex.test(this.words);
+  return this.words == this.words.toUpperCase();
 };
 
 Speech.prototype.question = function() {

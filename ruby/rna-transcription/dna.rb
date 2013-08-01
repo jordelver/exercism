@@ -4,10 +4,10 @@ class DNA
   end
 
   def to_rna
-    uracils
+    convert_thymidines_to_uracils
   end
 
-  def uracils
+  def convert_thymidines_to_uracils
     thymidines.map { |nucleotide| thymidine_to_uracil(nucleotide) }.join
   end
 

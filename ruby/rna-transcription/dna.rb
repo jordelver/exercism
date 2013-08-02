@@ -13,7 +13,7 @@ class DNA
     uracils = strand.clone
 
     thymidines_to_uracils.each do |thymidine, uracil|
-      uracils.gsub!(thymidine, uracil)
+      uracils.tr!(thymidine, uracil)
     end
 
     uracils

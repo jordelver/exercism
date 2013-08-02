@@ -3,7 +3,7 @@ Speech = function(words) {
 };
 
 Speech.prototype.shouting = function() {
-  if(this.words.trim() == '') {
+  if(this.silence()) {
     return false;
   }
 
@@ -17,7 +17,7 @@ Speech.prototype.question = function() {
 };
 
 Speech.prototype.silence = function() {
-  return this.words === '';
+  return this.words.trim() === '';
 };
 
 Bob = function() {};

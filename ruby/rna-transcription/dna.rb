@@ -10,11 +10,13 @@ class DNA
   end
 
   def convert_thymidines_to_uracils
+    uracils = strand.clone
+
     thymidines_to_uracils.each do |thymidine, uracil|
-      strand.gsub!(thymidine, uracil)
+      uracils.gsub!(thymidine, uracil)
     end
 
-    strand
+    uracils
   end
 
   def thymidines_to_uracils

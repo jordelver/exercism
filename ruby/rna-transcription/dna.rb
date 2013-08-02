@@ -1,8 +1,8 @@
 class DNA
-  attr_reader :dna_strand
+  attr_reader :strand
 
-  def initialize(dna_strand)
-    @dna_strand = dna_strand
+  def initialize(strand)
+    @strand = strand
   end
 
   def to_rna
@@ -11,10 +11,10 @@ class DNA
 
   def convert_thymidines_to_uracils
     thymidines_to_uracils.each do |thymidine, uracil|
-      dna_strand.gsub!(thymidine, uracil)
+      strand.gsub!(thymidine, uracil)
     end
 
-    dna_strand
+    strand
   end
 
   def thymidines_to_uracils

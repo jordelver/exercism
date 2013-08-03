@@ -10,19 +10,7 @@ class DNA
   end
 
   def convert_thymidines_to_uracils
-    uracils = strand.clone
-
-    thymidines_to_uracils.each do |thymidine, uracil|
-      uracils.tr!(thymidine, uracil)
-    end
-
-    uracils
-  end
-
-  def thymidines_to_uracils
-    {
-      "T" => "U"
-    }
+    strand.tr("T", "U")
   end
 end
 

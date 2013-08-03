@@ -17,7 +17,7 @@ Speech.prototype.question = function() {
 };
 
 Speech.prototype.silence = function() {
-  return this.words.trim() === '';
+  return this.words.trim() == '';
 };
 
 Bob = function() {};

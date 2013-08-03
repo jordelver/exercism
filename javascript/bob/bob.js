@@ -7,7 +7,7 @@ Speech.prototype.shouting = function() {
     return false;
   }
 
-  return this.words == this.words.toUpperCase();
+  return this.words === this.words.toUpperCase();
 };
 
 Speech.prototype.question = function() {
@@ -17,7 +17,7 @@ Speech.prototype.question = function() {
 };
 
 Speech.prototype.silence = function() {
-  return this.words.trim() == '';
+  return this.words.trim() === '';
 };
 
 Bob = function() {};

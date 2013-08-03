@@ -1,8 +1,9 @@
-(ns bob)
+(ns bob
+  (require [clojure.string :refer [upper-case]]))
 
 (defn shouting? [word]
   (= word
-    (clojure.string/upper-case word)))
+    (upper-case word)))
 
 (defn question? [word]
   (string?

@@ -1,4 +1,7 @@
 class DNA
+  THYMIDINE = "T"
+  URACIL    = "U"
+
   attr_reader :strand
 
   def initialize(strand)
@@ -10,7 +13,7 @@ class DNA
   end
 
   def convert_thymidines_to_uracils
-    strand.tr("T", "U")
+    strand.tr(THYMIDINE, URACIL)
   end
 end
 

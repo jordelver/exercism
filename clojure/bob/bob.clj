@@ -6,7 +6,7 @@
     (upper-case word)))
 
 (defn question? [word]
-  (= (str (last word)) "?"))
+  (= (last word) \?))
 
 (defn silence? [word]
   (= word ""))

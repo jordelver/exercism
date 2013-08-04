@@ -6,8 +6,7 @@
     (upper-case word)))
 
 (defn question? [word]
-  (string?
-    (re-find #"\?\z" word)))
+  (= (str (last word)) "?"))
 
 (defn silence? [word]
   (= word ""))

@@ -9,10 +9,6 @@ class DNA
   end
 
   def to_rna
-    convert_thymidines_to_uracils
-  end
-
-  def convert_thymidines_to_uracils
     strand.tr(THYMIDINE, URACIL)
   end
 end

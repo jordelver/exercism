@@ -1,4 +1,5 @@
 Speech = function(words) {
+  "use strict;"
   this.words = words;
 };
 
@@ -18,7 +19,7 @@ Speech.prototype.silence = function() {
   return this.words.trim() === '';
 };
 
-Bob = function() {};
+Bob = function() { "use strict;" };
 
 Bob.prototype.hey = function(speech) {
   var speech = new Speech(speech);

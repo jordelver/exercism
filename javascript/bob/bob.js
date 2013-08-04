@@ -23,10 +23,6 @@ Speech.prototype.silence = function() {
 Bob = function() {};
 
 Bob.prototype.hey = function(speech) {
-  return this.respond(speech);
-};
-
-Bob.prototype.respond = function(speech) {
   var speech = new Speech(speech);
 
   if(speech.shouting()) {

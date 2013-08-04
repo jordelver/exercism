@@ -11,9 +11,7 @@ Speech.prototype.shouting = function() {
 };
 
 Speech.prototype.question = function() {
-  var regex = /\?$/;
-
-  return regex.test(this.words);
+  return this.words[this.words.length - 1] === '?';
 };
 
 Speech.prototype.silence = function() {

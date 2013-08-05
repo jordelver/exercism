@@ -1,12 +1,12 @@
 class Phrase
-  EXCLUDE = /[^a-z\d\s]/
+  attr_reader :phrase
 
-  def initialize(words)
-    @words = words
+  def initialize(phrase)
+    @phrase = phrase
   end
 
   def words
-    @words.downcase.gsub(EXCLUDE, '').split(' ')
+    @words ||= phrase.downcase.scan(/[a-z]+|\d+/)
   end
 
   def word_count

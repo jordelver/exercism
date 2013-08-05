@@ -1,4 +1,6 @@
 defmodule Teenager do
+  import String, only: [upcase: 1, ends_with?: 2]
+
   def hey(speech) do
     cond do
       shouting?(speech) ->
@@ -13,15 +15,15 @@ defmodule Teenager do
   end
 
   defp shouting?(speech) do
-    if String.length(speech) > 0 do
-      String.upcase(speech) == speech
+    if size(speech) > 0 do
+      upcase(speech) == speech
     else
       false
     end
   end
 
   defp question?(speech) do
-    String.ends_with?(speech, "?")
+    ends_with?(speech, "?")
   end
 
   defp silence?(speech) do

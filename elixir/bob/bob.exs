@@ -12,7 +12,7 @@ defmodule Teenager do
     end
   end
 
-  def shouting?(speech) do
+  defp shouting?(speech) do
     if String.length(speech) > 0 do
       String.upcase(speech) == speech
     else
@@ -20,11 +20,11 @@ defmodule Teenager do
     end
   end
 
-  def question?(speech) do
+  defp question?(speech) do
     String.ends_with?(speech, "?")
   end
 
-  def silence?(speech) do
+  defp silence?(speech) do
     speech == ""
   end
 end

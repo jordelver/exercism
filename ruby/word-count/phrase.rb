@@ -10,13 +10,9 @@ class Phrase
   end
 
   def word_count
-    word_counts = {}
-
-    words.each do |word|
-      word_counts[word] = word_counts[word].to_i + 1
+    words.each_with_object({}) do |word, result|
+      result[word] = result[word].to_i + 1
     end
-
-    word_counts
   end
 end
 

@@ -15,7 +15,7 @@ defmodule Teenager do
   end
 
   defp shouting?(speech) do
-    if size(speech) > 0 do
+    if !silence?(speech) do
       upcase(speech) == speech
     else
       false

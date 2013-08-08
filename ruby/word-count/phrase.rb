@@ -6,7 +6,7 @@ class Phrase
   end
 
   def words
-    @words ||= phrase.downcase.scan(/[a-z]+|\d+/)
+    @words ||= phrase.downcase.scan(/\w+/)
   end
 
   def word_count
